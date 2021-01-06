@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页眉</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .container{
+            background-color: hsl(0, 0%, 90%);
+        }
+        .container::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .head{
+            float: left;
+            margin: 7px 200px;
+            color: hsl(0, 0%, 40%);
+        }
+        .wrap{
+            float: right;
+            margin-right: 100px;
+            color: hsl(0, 0%, 40%);
+            padding: 5px;
+        }
+        .wrap>a{
+            margin: 0 10px;
+            text-decoration: none;
+            color: inherit;
+            font-size: 14px;
+        }
+        .container .wrap .red{
+            color: red;
+        }
+        .icon{
+            position: absolute;
+            top: 5px;
+            display: inline-block;
+            width: 15px;
+            height: 23px;
+            background-image: url("坐标.jpg");
+            background-size: 100% auto;
+        }
+        span{
+            margin-left: 20px;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h5 class="head"><i class="icon"></i><span>湖南</span></h6> 
+        <div class="wrap">
+            <a href="#" class="item">你好,请登录</a>
+            <a href="#" class="item red">免费注册</a>|
+            <a href="#" class="item">我的订单</a>|
+            <a href="#" class="item">我的京东</a>|
+            <a href="#" class="item">京东会员</a>|
+            <a href="#" class="item red">企业采购</a>|
+            <a href="#" class="item">客户服务</a>
+        </div>
+    </div>
+</body>
+</html>

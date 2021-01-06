@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css动画</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body,.cantainer{
+            height: 100%;
+        }
+        .cantainer{
+            border: 1px dashed red;
+        }
+        .lantian{
+            height: 30%;
+            position: relative;
+            background-color: hsl(200, 100%, 80%);
+        }
+        .caodi{
+            height: 30%;
+            border-bottom: 7px solid  hsl(270, 0%, 80%);
+            background-image: url(https://img02.taopic.com/191106/318750-191106144I643.jpg);
+            background-size: 100% auto;
+            }
+        .paodao{
+            height: 38%;
+            background-color: hsl(270, 0%, 60%);
+        }
+        .paodao .top-box{
+            height: 49%;
+            background-color: hsl(270, 0%, 60%);
+            border-bottom:7px dashed white;
+            margin-bottom: 0.2%;
+        }
+        .paodao .bottom-box{
+            height: 49%;
+            background-color: hsl(270, 0%, 60%);
+            border-top:7px dashed white;
+        }
+         .paodao img{
+            width: 300px;
+            position: relative;
+        }
+        .top-box img{
+            animation: movered 4s;
+            animation-iteration-count: infinite;
+        }
+        .bottom-box img{
+            animation: moveyellow 4s;
+            animation-iteration-count: infinite;
+        }
+        .yun{
+            width: 250px;
+        }
+        .box-1{
+            position: absolute;
+            right: 100px;
+            animation: yun1move 4s;
+            animation-iteration-count: infinite;
+        }
+        .box-2{
+            position: absolute;
+            right: 400px;
+            bottom: 40px;
+            animation: yun2move 4s;
+            animation-iteration-count: infinite;
+        }
+        .caodi{
+            display: flex;
+            justify-content: center;
+        }
+        .caodi span{
+            color: white;
+            margin: auto;
+            font-size: 100px;
+            text-shadow: 3px 3px 5px black;
+        }
+        @keyframes moveyellow{
+            0%{
+                left: 0px;
+            }
+            20%{
+                transform: rotateZ(0deg);
+            }
+            30%{
+                transform: rotateZ(720deg);
+            }
+            100%{
+                left:1500px;
+                transform: rotateZ(720deg);
+            }
+        }
+        @keyframes movered{
+            0%{
+                left: 0px;
+                bottom:0px;
+            }
+            20%{
+                bottom:-200px;
+            }
+            70%{
+                left:1500px;
+                bottom:0px;
+            }
+        }
+        @keyframes yun1move{
+            0%{
+                right:100px;
+            }
+            100%{
+                right:400px;
+            }
+        }
+        @keyframes yun2move{
+            0%{
+                right:400px;
+            }
+            100%{
+                right:500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cantainer">
+            <div class="lantian">
+                <img src="90sheji_linggan_13394903.png" alt="" class="yun box-1">
+                <img src="90sheji_linggan_13394903.png" alt="" class="yun box-2">
+            </div>
+            <div class="caodi">
+                <span>山&nbsp&nbsp&nbsp冷</span>
+            </div>
+            <div class="paodao">
+                <div class="top-box">
+                    <img src="f2e092f6ab38fa2c9e41f0adf9885735.png" alt="">
+                </div>
+                <div class="bottom-box">
+                    <img src="f2e5a53920f641fade6c4e8be4b32114.png" alt="">
+                </div>
+            </div>
+    </div>
+</body>
+</html>

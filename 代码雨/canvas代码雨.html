@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>代码雨</title>
+ </head>
+ <body>
+ 	<canvas id="mycanvas" width="1000px" height="900px">
+ 	您的浏览器暂不支持canvas元素
+ 	</canvas>
+ 	<script type="text/javascript">
+ 	var 画布=document.getElementById("mycanvas");
+ 	var 笔=画布.getContext("2d");
+	var 字母="QWERTYUIOPASDFGHJKLZXCVBNM",间距=24,number=Math.floor(画布.width/间距),arr=[],color=["red","green","blue","yellow","cyan","pink","white"];
+	for(var i=0;i<number;i++){
+		arr.push(0);
+	}
+	function 呵呵(){
+		笔.fillStyle="rgba(0,0,0,0.1)"
+		笔.fillRect(0,0,画布.width,画布.height)
+		笔.font="18px arial"
+		笔.fillStyle=`rgb(${Math.floor(Math.random()*266)},${Math.floor(Math.random()*266)},${Math.floor(Math.random()*266)})`
+		for(var j=0;j<number;j++){
+		var x=j*间距,y=arr[j]*间距;
+
+		笔.fillText(字母.charAt(取范围随机数(0,26)),x,y)
+		if(y>画布.height && Math.random()>0.95){
+			arr[j]=0
+			}
+		arr[j]++
+		}
+	}
+	setInterval(呵呵,50)
+	function 取范围随机数(min,max){
+		var num=max-min;
+		return Math.floor(Math.random()*num)+min
+	}
+ 	</script>
+ </body>
+ </html> 

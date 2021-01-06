@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三行两列</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        body{
+            display: flex;
+            flex-flow: column;
+        }
+        .body{
+            display: flex;
+            flex: 1;
+        }
+        .head,.footer{
+            height: 100px;
+            background-color: green;
+
+        }
+        .main{
+            background-color: aqua;
+            width: 80%;
+        }
+        .side{
+            background-color: yellow;
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="head"></div>
+    <div class="body">
+        <div class="main"></div>
+        <div class="side"></div>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>

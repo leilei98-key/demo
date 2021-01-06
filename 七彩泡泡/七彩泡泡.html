@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彩色泡泡</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #mycanvas{
+            background-color: black;
+
+        }
+    </style>
+</head>
+<body>
+    <canvas id="mycanvas" width="1300px" height="900px" >您的浏览器暂不支持canvas标签</canvas>
+    <script>
+        /** @type {HTMLCanvasElement} */
+        var can=document.getElementById("mycanvas"),
+            ctx=can.getContext("2d"),
+            arr=[];
+
+            can.onmousemove=function(e){
+               arr.push(new circle(e))
+            }
+        function circle(obj){
+            this.x=obj.clientX;
+            this.y=obj.clientY;
+            this.vx=(Math.random()-0.5)*2.5;
+            this.vy=(Math.random()-0.5)*2.5;
+            this.color=color();
+            this.a=1
+            this.draw()
+        }   
+        function color(){
+            return `rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`;
+        }
+        circle.prototype={
+            draw:function(){
+                ctx.beginPath()
+                ctx.fillStyle=this.color
+                ctx.globalAlpha=this.a
+                ctx.globalCompositeOperation="lighter"
+                ctx.arc(this.x,this.y,30,0,Math.PI*2,false)
+                ctx.fill()
+                this.update()
+            },
+            update:function(){
+                this.x+=this.vx;
+                this.y+=this.vy;
+                this.a*=0.98;
+            }
+        }
+        function rum(){
+            ctx.clearRect(0,0,can.width,can.height)
+            arr.forEach((item,i)=>{
+                item.draw()
+                if(item.a<0.05){
+                    arr.splice(i,1)
+                }
+            })
+            requestAnimationFrame(rum)
+        }
+        rum()
+    </script>
+</body>
+</html>

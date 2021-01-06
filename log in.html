@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input练习</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        .innerbox{
+            padding: 25px 25px 0px 25px;
+        }
+        .box-wrap{
+            box-shadow: 0 0 3px 1px cadetblue;
+            background-color: hsl(0, 0%, 97%);
+            border-radius: 6px;
+            width: 450px;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .wrap0{
+            left: 50%;
+        }
+        .wrap1{
+            left: 80%;
+            opacity: 0;
+        }
+        .title{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .title p{
+            font-weight: bold;
+            font-size:40px;
+            color: cadetblue;
+            margin: 0px;
+        }
+        .title .linear{
+            display: inline-block;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0),cadetblue,cadetblue,cadetblue,cadetblue,rgba(255,255,255,0));
+        }
+        .box-item label{
+            color: cadetblue;
+            display: block;
+            font-weight: bold;
+        }
+        .box-item input{
+            width: 95%;
+            padding: 8px 12px;
+            margin: 5px;
+            border: none;
+            border-radius: 3px;
+            box-shadow: 0 0 4px 1px hsl(0, 0%, 60%);
+            outline: none;
+        }
+        .box1{
+            margin-bottom: 12px;
+        }
+
+        .box2{
+            margin-bottom: 8px;
+        }
+        .box3 span{
+            color: cadetblue;
+            font-size: 8px;
+            font-weight: bold;
+        }
+
+        .but-box{
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .but-box input{
+            background-color: cadetblue;
+            display: inline-block;
+            width:130px;
+            height: 45px;
+            border: 3px solid white;
+            border-radius: 10px;
+            color: white;
+            font-size: 22px;
+            box-shadow: 0px 5px 4px hsl(0, 0%, 80%);
+            outline: none;
+        }
+        .footer{
+            padding: 20px 30px;
+            text-align: right;
+            background: linear-gradient(to top,hsla(200,60%,80%,0.5),hsla(220,60%,80%,0));
+        }
+        .footer span{
+            font-weight: bold;
+            display: inline-block;
+            color: hsl(0, 0%, 60%);
+            margin: 0px 10px;
+        }
+        .footer .substitute{
+            border:1px solid hsl(0, 0%, 60%);
+            border-radius: 3px;
+            padding: 0px 10px;
+            color: cadetblue;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: white;
+            outline: none;
+        }
+        .last{
+            margin-bottom: 10px;
+        }
+        .on0{
+            animation: switchover0 1s both;
+        }
+        .on1{
+            animation: switchover1 1s both;
+        }
+        .on2{
+            animation: switchover2 1s both;
+        }
+        .on3{
+            animation: switchover3 1s both;
+        }
+        @keyframes switchover0{
+            100%{
+                left: 10%;
+                opacity: 0;
+            }
+        }
+        @keyframes switchover1{
+            0%{
+                left: 10%;
+                opacity: 0;
+            }
+            100%{
+                left: 50%;
+                opacity: 1;
+            }
+        }
+        @keyframes switchover2{
+            1%{
+                left: 80%;
+                opacity: 0;
+            } 
+            100%{
+                left: 50%;
+                opacity: 1;
+            } 
+        }
+
+        @keyframes switchover3{
+            0%{
+                left: 50%;
+                opacity: 1;
+            }
+            100%{
+                left: 80%;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box-wrap wrap0" id="wrap0">
+      <div class="innerbox">
+        <form action="">
+            <div class="title">
+                <p>Log in</p>
+                <span class="linear"></span>
+            </div>
+            <div class="box-item">
+                <label for="username" class="username">Your email or username</label>
+                <input type="text" name="username" id="username" placeholder="myusername or mymail@mail.con" autocomplete="off" required>
+            </div>
+            <div class="box-item">
+                <label for="password">Your password</label>
+                <input type="password" name="password" id="password" placeholder="mypassword" required>
+            </div>
+            <div class="box3">
+                <input type="checkbox">
+                <span class="reminder">
+                    <i>Keep me logged in</i>
+                </span>
+            </div>
+            <div class="but-box">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+      </div>
+        <div class="footer">
+            <span class="remind">Not a member yet ?</span>
+            <button type="button" class="substitute" id="but0">Join us</button>
+        </div>
+    </div>
+    <!---------------------------------分割线------------------------------------->
+    <div class="box-wrap wrap1" id="wrap1">
+        <div class="innerbox">
+          <form action="">
+              <div class="title">
+                  <p>Sign up</p>
+                  <span class="linear"></span>
+              </div>
+              <div class="box-item">
+                  <label for="ZHusername" class="username">Your username</label>
+                  <input type="text" name="username" id="ZHusername" placeholder="mysuperusemame690" autocomplete="off" required>
+              </div>
+              <div class="box-item">
+                  <label for="ZHemail">Your email</label>
+                  <input type="email" name="ZHemail" id="ZHemail" placeholder="mysupermail.con" required>
+              </div>
+              <div class="box-item">
+                <label for="ZHpassword">Your password</label>
+                <input type="password" name="ZHpassword" id="ZHpassword" placeholder="eg X8dfl90EO" required>
+            </div>
+            <div class="box-item last">
+                <label for="truepassword">please confirm your password</label>
+                <input type="password" name="truepassword" id="truepassword" placeholder="eg X8dfl90EO" required>
+            </div>
+              <div class="but-box">
+                  <input type="submit" value="Sign up">
+              </div>
+          </form>
+        </div>
+          <div class="footer">
+              <span class="remind">Already amember？</span>
+              <button type="button" class="substitute" id="but1">Go and log in</button>
+      </div>
+      <script>
+          let wrapObj=[],butObj=[];
+          for(let i=0;i<2;i++){
+              wrapObj[i]=document.getElementById(("wrap"+i)),
+              butObj[i]=document.getElementById("but"+i)
+             }
+   
+            butObj[0].onclick=function(){
+              wrapObj[0].className="box-wrap wrap0 on0"
+              wrapObj[1].className="box-wrap wrap1 on2"
+             }
+            butObj[1].onclick=function(){
+             wrapObj[0].className="box-wrap wrap0  on1"
+             wrapObj[1].className="box-wrap wrap1 on3"
+             }
+      </script>
+</body>
+</html>

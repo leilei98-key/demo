@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D相册</title>
+</head>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 900px;
+            background-image: linear-gradient(red,black);
+        }
+        .wrap{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            perspective: 800px;
+        }
+        .cube{
+            width: 200px;
+            height: 200px;
+            top: 20px;
+            left: 50px;
+            transform-style: preserve-3d;
+            transition: 10s;
+        }
+        .big-box{
+            width: 200px;
+            height:200px;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSuEOXmuiGahj5XhKyxU0A2s5isUigtcwTyew-sT2LpzuFlZeNQ);
+            background-size: auto 100%;
+            position: absolute;
+            transition: transform 2s;
+        }
+        .g-box{
+            width: 100px;
+            height:100px;
+            top: 50px;
+            bottom: 50px;
+            left: 50px;
+            right: 50px;
+            background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmXd-5j4rvr8P1Gy2y44WzXlDZQcEyTK-1DT8clW4sNZ-Rp1Gy);
+            background-size:auto 100%;
+            position: absolute;
+        }
+        .cube:hover{
+            transform: rotateX(150deg) rotateZ(100deg);
+
+        }
+        .cube:hover .top{
+            transform: rotateX(90deg) translateZ(150px);
+        }
+        .cube:hover .bottom{
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+        .cube:hover .left{
+            transform: rotateY(90deg) translateZ(150px);
+        }
+        .cube:hover .right{
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+        .cube:hover .qian{
+            transform: translateZ(150px);
+        }
+        .cube:hover .hou{
+            transform: translateZ(-150px);
+        }
+
+
+        .top{
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .bottom{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        .left{
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .right{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .qian{
+            transform: translateZ(100px);
+        }
+        .hou{
+            transform: translateZ(-100px);
+        }
+        
+
+        .top1{
+            transform: rotateX(90deg) translateZ(50px);
+        }
+        .bottom1{
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+        .left1{
+            transform: rotateY(90deg) translateZ(50px);
+        }
+        .right1{
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+        .qian1{
+            transform: translateZ(50px);
+        }
+        .hou1{
+            transform: translateZ(-50px);
+        }
+
+
+    </style>
+<body>
+    <div class="wrap">
+        <div class="cube">
+            <div class="big-box top"></div>
+            <div class="big-box bottom"></div>
+            <div class="big-box left"></div>
+            <div class="big-box right"></div>
+            <div class="big-box qian"></div>
+            <div class="big-box hou"></div>
+
+            <div class="g-box top1"></div>
+            <div class="g-box bottom1"></div>
+            <div class="g-box left1"></div>
+            <div class="g-box right1"></div>
+            <div class="g-box qian1"></div>
+            <div class="g-box hou1"></div>
+        </div>
+    </div>
+</body>
+</html>

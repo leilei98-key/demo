@@ -1,0 +1,58 @@
+<!DOCTYpE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基础文档</title>
+	<style type="text/css">
+		.award{
+			width: 500px;
+			height: 500px;
+			margin: 200px auto;
+			background-color:black;
+			display: grid;
+			grid-template-rows: repeat(3,1fr);
+			grid-template-columns: repeat(3,1fr);
+			gap: 10px;
+			padding: 20px;
+		}
+		.award div{
+			background-color: white;
+			text-align: center;
+			line-height: 5.5em;
+		}
+	</style>
+</head>
+<body>
+	<p id="清单"></p>
+	<div class="award">
+		<div class="box">1</div>
+		<div class="box">2</div>
+		<div class="box">3</div>
+		<div class="box">4</div>
+		<div class="按钮">5</div>
+		<div class="box">6</div>
+		<div class="box">7</div>
+		<div class="box">8</div>
+		<div class="box">9</div>
+	</div>
+	<script>
+		var 抽奖按钮对象=document.querySelector(".按钮"),
+			清单=document.getElementById("清单"),
+			奖品数组对象=document.querySelectorAll(".box");
+				抽奖按钮对象.onclick=function(){
+				var 开始时间=new Date();
+				var 时钟ID=setInterval(function(){
+					for(var 计次=0;计次<奖品数组对象.length;计次++){
+						奖品数组对象[计次].style.backgroundColor="white"
+					}
+					var 随机数=Math.floor(Math.random()*8)
+					奖品数组对象[随机数].style.backgroundColor="yellow"
+					if(new Date()-开始时间>2000){
+						clearInterval(时钟ID)
+						清单.innerHTML=随机数+"奖品<br/>";
+					}					
+				}, 50);
+			}
+	</script>
+</body>
+</html>
